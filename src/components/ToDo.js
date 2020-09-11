@@ -15,11 +15,20 @@ function ToDo ()
 
     const addNewTask = event => {
         event.preventDefault();
+
+
+        const newToDosList = [...toDos];
+
+        newToDosList.push({task: newTask});
+
+        setToDos(newToDosList);
     }
     /*function addNewTask (event)
     {
 
     } */
+
+
 
 
     //We use "return" for our render, in a component.
