@@ -11,14 +11,23 @@ function ToDo ()
         {task: "Learn React"},
         {task: "Find out what Redux is"}
 
-    ].map((toDo, index) => <li key={index}>{toDo.task}</li>));
+    ]);
+
+    const addNewTask = event => {
+        event.preventDefault();
+    }
+    /*function addNewTask (event)
+    {
+
+    } */
+
 
     //We use "return" for our render, in a component.
     return (
         <>
             <h2>{newTask}</h2>
 
-            <form>
+            <form onSubmit={addNewTask}>
                 <label htmlFor="task">New Task:</label>
                 <input 
                 type="text"
@@ -31,7 +40,7 @@ function ToDo ()
                  </p>
                 <input type="submit" value="Add To-Do" />
             </form>
-    <ul>{toDos}</ul>
+    <ul>{toDos.map((toDo, index) => <li key={index}>{toDo.task}</li>)}</ul>
         </>
     );
 
