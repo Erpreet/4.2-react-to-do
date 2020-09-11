@@ -22,6 +22,8 @@ function ToDo ()
         newToDosList.push({task: newTask});
 
         setToDos(newToDosList);
+
+        setNewTask('');
     }
     /*function addNewTask (event)
     {
